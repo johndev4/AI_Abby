@@ -28,6 +28,7 @@ def tell_your_name(ME):
                 voiceSys.speak("I'm asking your name.")
 
             yes += 1
+
         elif "no" == query.lower() or "nope" == query.lower() or "don't want" in query.lower():
             if no == 0:
                 voiceSys.speak("Why not? In order to help you, you should give me your name.")
@@ -36,7 +37,9 @@ def tell_your_name(ME):
                 voiceSys.speak("Ok, that's it. I'm terminating the program. Good bye!")
                 exit()
 
-
+        elif "terminate the program" in query.lower() or "goodbye" in query.lower() or "terminate" in query.lower():
+            voiceSys.speak(f"Ok, goodbye")
+            exit()
 
         else:
             if "i'm " in query.lower() or "i am " in query.lower() or "my name is " in query.lower() or "hi " in query.lower() or "hello " in query.lower() or "yes " in query.lower() or "it's " in query.lower() or "it is " in query.lower():
