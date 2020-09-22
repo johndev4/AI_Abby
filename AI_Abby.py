@@ -1,3 +1,8 @@
+#AI_Abby
+#version 1.19-22alpha
+#Author: John Mistica
+# Duration created: September 19-22, 2020
+
 from attributes import AI_ASSISTANT, CREATOR, ME
 from voice_system import VoiceSystem
 import operation
