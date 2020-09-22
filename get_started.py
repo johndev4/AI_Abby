@@ -78,5 +78,5 @@ def __proccess_name__(ME, query):
     ME = ME.replace("hello ", "")
     ME = ME.replace("it's ", "")
     ME = ME.replace("it is ", "")
-    ME = ME.split(" "); ME = ME[0]
+    ME = ME.split(" "); ME = ME[1]
     return ME
