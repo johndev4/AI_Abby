@@ -3,7 +3,7 @@ from voice_system import VoiceSystem
 import operation
 from get_started import tell_your_name
 
-print("Initializing the program...")
+print("Initializing the program...\r\n")
 
 voice_Sys = VoiceSystem(AI_ASSISTANT, ME)
 
