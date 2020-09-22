@@ -1,4 +1,4 @@
-from constant_variables import ME, AI_ASSISTANT
+from attributes import ME, AI_ASSISTANT
 import webbrowser
 import random
 import json

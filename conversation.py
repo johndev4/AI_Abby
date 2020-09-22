@@ -1,4 +1,4 @@
-from constant_variables import ME, CREATOR, AI_ASSISTANT
+from attributes import ME, CREATOR, AI_ASSISTANT
 import wikipedia
 import random
 from voice_system import VoiceSystem
@@ -34,6 +34,13 @@ def chat(query):
     
     elif "f***" in query.lower() or "fuck you" in query.lower():
         voice_Sys.speak(f"Fuck you too!")
+    
+    elif "you" in query.lower() and "can" in query.lower() and "do" in query.lower():
+        voice_Sys.speak("I can do these things:")
+        print("1. Openning chrome")
+        print("2. Search somesthing for you")
+        print("3. Play music")
+        print("4. Have a conversation with you\n")
     
     else:
         return 1

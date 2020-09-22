@@ -4,7 +4,7 @@ import web_search
 import commands
 import conversation
 from get_started import tell_your_name
-from constant_variables import CREATOR, AI_ASSISTANT, ME
+from attributes import CREATOR, AI_ASSISTANT, ME
 import json
 
 print("Initializing the program...")

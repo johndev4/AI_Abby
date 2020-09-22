@@ -1,4 +1,4 @@
-from constant_variables import ME, CREATOR, AI_ASSISTANT
+from attributes import ME, CREATOR, AI_ASSISTANT
 import wikipedia
 from voice_system import VoiceSystem
 

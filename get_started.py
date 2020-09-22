@@ -1,6 +1,6 @@
 import random
 from voice_system import VoiceSystem
-from constant_variables import CREATOR, AI_ASSISTANT, ME
+from attributes import CREATOR, AI_ASSISTANT, ME
 
 voiceSys = VoiceSystem(AI_ASSISTANT, ME)
 
