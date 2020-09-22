@@ -39,12 +39,8 @@ def tell_your_name(ME):
 
 
         else:
-            if "i'm " in query.lower() or "i am " in query.lower() or "my name is " in query.lower() or "hi " in query.lower() or "hello " in query.lower() or "yes " in query.lower():
-                ME = query.replace("i'm ", "")
-                ME = ME.replace("i am ", "")
-                ME = ME.replace("my name is ", "")
-                ME = ME.replace("hi ", "")
-                ME = ME.replace("hello ", "")
+            if "i'm " in query.lower() or "i am " in query.lower() or "my name is " in query.lower() or "hi " in query.lower() or "hello " in query.lower() or "yes " in query.lower() or "it's " in query.lower() or "it is " in query.lower():
+                ME = __proccess_name__(ME, query)
 
             else:
                 if query == "":
@@ -62,13 +58,7 @@ def tell_your_name(ME):
                         elif "no" in query.lower() or "nope" in query.lower():
                             query = query.replace("no ", "")
                             if "i'm " in query.lower() or "i am " in query.lower() or "my name is " in query.lower() or "hi " in query.lower() or "hello " in query.lower() or "yes " in query.lower() or "it's " in query.lower() or "it is " in query.lower():
-                                ME = query.replace("i'm ", "")
-                                ME = ME.replace("i am ", "")
-                                ME = ME.replace("my name is ", "")
-                                ME = ME.replace("hi ", "")
-                                ME = ME.replace("hello ", "")
-                                ME = ME.replace("it's ", "")
-                                ME = ME.replace("it is ", "")
+                                ME = __proccess_name__(ME, query)
                             else:
                                 voiceSys.speak("So, what is your name?")
                             break
@@ -76,6 +66,17 @@ def tell_your_name(ME):
                             voiceSys.speak("Again, is that your name?")
 
                         else:
-                            voiceSys.speak("Please answer yes or no only.")
+                            break
     
     return ME.title()
+
+def __proccess_name__(ME, query):
+    ME = query.replace("i'm ", "")
+    ME = ME.replace("i am ", "")
+    ME = ME.replace("my name is ", "")
+    ME = ME.replace("hi ", "")
+    ME = ME.replace("hello ", "")
+    ME = ME.replace("it's ", "")
+    ME = ME.replace("it is ", "")
+    ME = ME.split(" "); ME = ME[0]
+    return ME

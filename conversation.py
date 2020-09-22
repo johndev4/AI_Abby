@@ -21,26 +21,42 @@ def chat(query):
         voice_Sys.speak(f"I'm {feel[1]}.")
         if feel == "feeling helpful":
             voice_Sys.speak("What can I do for you?")
-
-    elif "who are you" in query.lower():
-        blank = ["", ", your beautiful virtual assistant.", ", your girlfriend. Just kidding!", ", the smartest among virtual assistant."]
-        random.shuffle(blank)
-        voice_Sys.speak(f"I'm Abby{blank[1]}")
     
-    elif "hello" in query.lower() or "hi" in query.lower():
+    elif "hello" == query.lower() or "hi" == query.lower() or f"hello {AI_ASSISTANT}" == query.lower() or f"hi {AI_ASSISTANT}" == query.lower():
         greet = ["Hi", "Hello"]
         random.shuffle(greet)
         voice_Sys.speak(f"{greet[0]} {ME}")
     
-    elif "f***" in query.lower() or "fuck you" in query.lower():
-        voice_Sys.speak(f"Fuck you too!")
+    elif "fuck you" in query.lower():
+        fuck = [f"Fuck you too {ME}", "You're so mean!", "You're so rude!"]
+        random.shuffle(fuck)
+        voice_Sys.speak(f"{fuck[1]}")
+
+    elif "love you" in query.lower():
+        love = [f"I love you too {ME}", "Oh, you are sweet",
+        "I think I fell in love with you too."]
+        random.shuffle(love)
+        voice_Sys.speak(f"{love[1]}")
+
+    elif "what" == query.lower():
+        voice_Sys.speak("What do you mean?")
+
+    elif "who" == query.lower():
+        voice_Sys.speak("Who who?")
     
-    elif "you" in query.lower() and "can" in query.lower() and "do" in query.lower():
-        voice_Sys.speak("I can do these things:")
-        print("1. Openning chrome")
-        print("2. Search somesthing for you")
-        print("3. Play music")
-        print("4. Have a conversation with you\n")
+    elif "who are you" in query.lower() or "your name" in query.lower():
+        blank = ["", ", your beautiful virtual assistant.", ", your girlfriend. Just kidding!", ", the smartest amongst virtual assistant."]
+        random.shuffle(blank)
+        voice_Sys.speak(f"I'm Abby{blank[1]}")
+    
+    elif "who" in query.lower() and "am" in query.lower() and "i" in query.lower():
+        voice_Sys.speak(f"Your name is {ME}")
+    
+    elif "i am" in query.lower() or "i'm" in query.lower() or "my name is" in query.lower():
+        temp_name = query.replace("i am ", "")
+        temp_name = temp_name.replace("i'm ", "")
+        temp_name = temp_name.replace("my name is ", "")
+        voice_Sys.speak(f"Do you want me to call you you {temp_name}")
     
     else:
         return 1

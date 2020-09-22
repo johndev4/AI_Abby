@@ -44,8 +44,8 @@ class VoiceSystem:
             else:
                 print(f"{self.ME} said: {query}\n")
                 
-        except Exception:
+        except:
             query = ""
-            self.speak("Sorry, I can't here you.")
+            self.speak("Sorry, I can't hear you.")
             
         return query
