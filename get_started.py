@@ -43,7 +43,7 @@ def tell_your_name(ME):
 
         else:
             if "i'm " in query.lower() or "i am " in query.lower() or "my name is " in query.lower() or "hi " in query.lower() or "hello " in query.lower() or "yes " in query.lower() or "it's " in query.lower() or "it is " in query.lower():
-                ME = __proccess_name__(ME, query)
+                ME = __process_name__(ME, query)
 
             else:
                 if query == "":
@@ -61,7 +61,7 @@ def tell_your_name(ME):
                         elif "no" in query.lower() or "nope" in query.lower():
                             query = query.replace("no ", "")
                             if "i'm " in query.lower() or "i am " in query.lower() or "my name is " in query.lower() or "hi " in query.lower() or "hello " in query.lower() or "yes " in query.lower() or "it's " in query.lower() or "it is " in query.lower():
-                                ME = __proccess_name__(ME, query)
+                                ME = __process_name__(ME, query)
                             else:
                                 voiceSys.speak("So, what is your name?")
                             break
@@ -73,13 +73,26 @@ def tell_your_name(ME):
     
     return ME.title()
 
-def __proccess_name__(ME, query):
-    ME = query.replace("i'm ", "")
-    ME = ME.replace("i am ", "")
-    ME = ME.replace("my name is ", "")
-    ME = ME.replace("hi ", "")
-    ME = ME.replace("hello ", "")
-    ME = ME.replace("it's ", "")
-    ME = ME.replace("it is ", "")
-    ME = ME.split(" "); ME = ME[1]
+def __process_name__(ME, query):
+    ME = __process_encapsulation__(query, "i'm")
+    ME = __process_encapsulation__(ME, "i am")
+    ME = __process_encapsulation__(ME, "my name is")
+    ME = __process_encapsulation__(ME, "it's")
+    ME = __process_encapsulation__(ME, "it is")
+    ME = __process_encapsulation__(ME, "hi")
+    ME = __process_encapsulation__(ME, "hello")
     return ME
+    
+
+def __process_encapsulation__(str1, str2):
+    if str1.find(str2) != -1:
+        loc = str1.find(str2)
+        str1 = str1[loc:len(str1)] 
+        str1 = str1.replace("i'm ", "")
+        str1 = str1.replace("i am ", "")
+        str1 = str1.replace("my name is ", "")
+        str1 = str1.replace("it's ", "")
+        str1 = str1.replace("it is ", "")
+        str1 = str1.replace("hi ", "")
+        str1 = str1.replace("hello ", "")
+    return str1
