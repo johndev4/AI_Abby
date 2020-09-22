@@ -7,11 +7,7 @@ from voice_system import VoiceSystem
 voice_Sys = VoiceSystem(AI_ASSISTANT, ME)
 
 def give_command(query):
-    if "terminate the program" in query.lower() or "goodbye" in query.lower() or "terminate" in query.lower() or "no" in query.lower() or "nope" in query.lower() or "nothing" in query.lower():
-        voice_Sys.speak(f"Ok, goodbye {ME}")
-        exit()
-
-    elif 'open youtube' in query.lower():
+    if 'open youtube' in query.lower():
         voice_Sys.speak(f"Ok, openning youtube..")
         url = "www.youtube.com"
         chrome_path = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
