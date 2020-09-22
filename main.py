@@ -12,8 +12,8 @@ print("Initializing the program...")
 voice_Sys = VoiceSystem(AI_ASSISTANT, ME)
 
 voice_Sys.speak(f"Hello, I'm {AI_ASSISTANT}, your virtual assistant.")
-'''ME = tell_your_name(ME)
-voice_Sys.greetMe()'''
+ME = tell_your_name(ME)
+voice_Sys.greet(ME)
 voice_Sys.speak(f"What can I help you today?")
 
 while True:

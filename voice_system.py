@@ -19,16 +19,16 @@ class VoiceSystem:
         VoiceSystem.engine.say(text)
         VoiceSystem.engine.runAndWait()
 
-    def greetMe(self):
+    def greet(self, ME):
         hour = int(datetime.datetime.now().hour)
         print(hour)
 
         if hour>=0 and hour<12:
-            self.speak(f"Good morning {self.ME}, it's nice to meet you")   
+            self.speak(f"Good morning {ME}, it's nice to meet you")   
         elif hour>=12 and hour<18:
-            self.speak(f"Good afternoon {self.ME}, it's nice to meet you")
+            self.speak(f"Good afternoon {ME}, it's nice to meet you")
         else:
-            self.speak(f"Good evening {self.ME}, it's nice to meet you")
+            self.speak(f"Good evening {ME}, it's nice to meet you")
 
     def listen(self):
         r = sr.Recognizer()

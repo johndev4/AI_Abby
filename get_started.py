@@ -39,13 +39,12 @@ def tell_your_name(ME):
 
 
         else:
-            if ("i'm " or "i am " or "my name is " or "hi " or "hello " or "yes ") in query.lower():
+            if "i'm " in query.lower() or "i am " in query.lower() or "my name is " in query.lower() or "hi " in query.lower() or "hello " in query.lower() or "yes " in query.lower():
                 ME = query.replace("i'm ", "")
                 ME = ME.replace("i am ", "")
                 ME = ME.replace("my name is ", "")
                 ME = ME.replace("hi ", "")
                 ME = ME.replace("hello ", "")
-                print("hellos")
 
             else:
                 if query == "":
@@ -57,13 +56,23 @@ def tell_your_name(ME):
                     while True:
                         query = voiceSys.listen()
                         
-                        if "yes" == query.lower() or "yeah" == query.lower():
+                        if "yes" in query.lower() or "yea" in query.lower() or "yup" in query.lower() or "yep" in query.lower():
                             ME = temp_name
                             break
-                        elif "no" == query.lower() or "nope" == query.lower():
-                            voiceSys.speak("So what is your name?")
+                        elif "no" in query.lower() or "nope" in query.lower():
+                            query = query.replace("no ", "")
+                            if "i'm " in query.lower() or "i am " in query.lower() or "my name is " in query.lower() or "hi " in query.lower() or "hello " in query.lower() or "yes " in query.lower() or "it's " in query.lower() or "it is " in query.lower():
+                                ME = query.replace("i'm ", "")
+                                ME = ME.replace("i am ", "")
+                                ME = ME.replace("my name is ", "")
+                                ME = ME.replace("hi ", "")
+                                ME = ME.replace("hello ", "")
+                                ME = ME.replace("it's ", "")
+                                ME = ME.replace("it is ", "")
+                            else:
+                                voiceSys.speak("So, what is your name?")
                             break
-                        elif "Sorry, I can't here you." == query:
+                        elif "" == query:
                             voiceSys.speak("Again, is that your name?")
 
                         else:

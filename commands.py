@@ -7,7 +7,7 @@ from voice_system import VoiceSystem
 voice_Sys = VoiceSystem(AI_ASSISTANT, ME)
 
 def give_command(query):
-    if "terminate the program" == query.lower() or "goodbye" == query.lower() or "terminate" == query.lower() or "no" == query.lower() or "nope" == query.lower() or "nothing" == query.lower() or "terminate" in query.lower():
+    if "terminate the program" in query.lower() or "goodbye" in query.lower() or "terminate" in query.lower() or "no" in query.lower() or "nope" in query.lower() or "nothing" in query.lower():
         voice_Sys.speak(f"Ok, goodbye {ME}")
         exit()
 
