@@ -14,4 +14,4 @@ voice_Sys.speak(f"What can I help you today?")
 
 while True:
     query = voice_Sys.listen()
-    operation.func(query)  
+    operation.func(query)
