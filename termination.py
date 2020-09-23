@@ -2,7 +2,7 @@ from voice_system import VoiceSystem
 from attributes import CREATOR, AI_ASSISTANT, ME
 
 voice_Sys = VoiceSystem(AI_ASSISTANT, ME)
-import operation
+import operations
 
 def anything_else():
     while True:
@@ -11,7 +11,7 @@ def anything_else():
         
         if query != "" and not("yes" == query.lower() or "yea" == query.lower() or "yup" == query.lower() or "yep" == query.lower()):
             if query != "Sorry, I can't here you.":
-                if operation.func(query):
+                if operations.func(query):
                     break
 
         elif "terminate the program" in query.lower() or "goodbye" in query.lower() or "terminate" in query.lower() or "no " in  query.lower() or "nope" in query.lower() or "nothing" in query.lower():

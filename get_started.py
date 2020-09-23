@@ -4,7 +4,7 @@ from attributes import CREATOR, AI_ASSISTANT, ME
 
 voiceSys = VoiceSystem(AI_ASSISTANT, ME)
 
-def tell_your_name(ME):
+def get_username(ME):
     yes = 0
     no = 0
     voiceSys.speak("May I know your name?")

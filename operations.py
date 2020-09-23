@@ -1,10 +1,9 @@
 from voice_system import VoiceSystem
+from attributes import CREATOR, AI_ASSISTANT, ME
 import termination
 import web_search
 import commands
 import conversation
-from get_started import tell_your_name
-from attributes import CREATOR, AI_ASSISTANT, ME
 import json
 import wikipedia
 
