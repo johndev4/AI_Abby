@@ -5,19 +5,18 @@ import os
 import pyaudio
 
 class VoiceSystem:
-    
-    engine = pyttsx3.init('sapi5')
-    voices = engine.getProperty('voices')
-    engine.setProperty('voice', voices[1].id)
 
     def __init__(self, AI_ASSISTANT, ME):
         self.AI_ASSISTANT = AI_ASSISTANT
         self.ME = ME
+        self.engine = pyttsx3.init('sapi5')
+        self.voices = self.engine.getProperty('voices')
+        self.engine.setProperty('voice', self.voices[1].id)
 
     def speak(self, text):
         print(f"{self.AI_ASSISTANT}: {text}")
-        VoiceSystem.engine.say(text)
-        VoiceSystem.engine.runAndWait()
+        self.engine.say(text)
+        self.engine.runAndWait()
 
     def greet(self, ME):
         hour = int(datetime.datetime.now().hour)
