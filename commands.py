@@ -40,10 +40,10 @@ def give_command(query):
 
 
     elif "play" in query.lower() or "music" in query.lower() or "music on youtube" in query.lower():
-        with open("json/music_list.json") as ml:
-            music_list = json.load(ml)
-        random.shuffle(music_list)
-        pick = random.choice(music_list)
+        with open("json/music_list.json") as music_list:
+            ml = json.load(music_list)
+        random.shuffle(ml['music_list'])
+        pick = random.choice(ml['music_list'])
 
         voice_Sys.speak(f"Ok, playing some music..")
         url = f"www.youtube.com/watch?v={pick}"
