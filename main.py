@@ -14,9 +14,9 @@ if __name__ == "__main__":
     voice_Sys = VoiceSystem(AI_ASSISTANT, ME)
 
     voice_Sys.speak(f"Hello, I'm {AI_ASSISTANT}, your virtual assistant.")
-    '''ME = get_username(ME)
+    ME = get_username(ME)
     voice_Sys.greet(ME)
-    voice_Sys.speak(f"What can I help you today?")'''
+    voice_Sys.speak(f"What can I help you today?")
 
     while True:
         query = voice_Sys.listen()
