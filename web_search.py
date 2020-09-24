@@ -26,6 +26,9 @@ def explore(query):
     elif "search " in query.lower() or "search for " in query.lower() or "who is " in query.lower() or "who are " in query.lower():
         try:
             query = query.replace("search ","")
+            query = query.replace("search for ","")
+            query = query.replace("who is ","")
+            query = query.replace("who are ","")
             voice_Sys.speak(f"Searching {query} in wikipedia...")
             results = wikipedia.summary(query,sentences=3)
             voice_Sys.speak(results)
