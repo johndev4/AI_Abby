@@ -49,7 +49,7 @@ def chat(query):
         random.shuffle(blank)
         voice_Sys.speak(f"I'm Abby{blank[1]}")
     
-    elif "who" in query.lower() and "am" in query.lower() and "i" in query.lower():
+    elif "who am i" == query.lower() or "who i am" == query.lower():
         voice_Sys.speak(f"Your name is {ME}")
     
     elif "i am" in query.lower() or "i'm" in query.lower() or "my name is" in query.lower():

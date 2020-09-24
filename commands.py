@@ -39,7 +39,7 @@ def give_command(query):
         webbrowser.get(edge_path).open(url)
 
 
-    elif "play" in query.lower() or "music" in query.lower() or "music on youtube" in query.lower():
+    elif "play" in query.lower() or "music" in query.lower() or "music on youtube" in query.lower() or "song" in query.lower():
         with open("json/music_list.json") as music_list:
             ml = json.load(music_list)
         random.shuffle(ml['music_list'])
