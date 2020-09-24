@@ -3,10 +3,10 @@
 block_cipher = None
 
 
-a = Analysis(['C:/Users/raphm/Documents/Python_files/AI_Abby/main.py'],
-             pathex=['C:\\Users\\johndev4\\Documents\\Python_files\\AI_Abby'],
+a = Analysis(['C:/Users/johndev4/Documents/AI_Abby/main.py'],
+             pathex=['C:\\Users\\johndev4\\Documents\\AI_Abby'],
              binaries=[],
-             datas=[('C:/Users/johndev4/Documents/Python_files/AI_Abby/json/music_list.json', '.')],
+             datas=[],
              hiddenimports=['pyttsx3.drivers', 'pyttsx3.drivers.dummy', 'pyttsx3.drivers.espeak', 'pyttsx3.drivers.nsss', 'pyttsx3.drivers.sapi5'],
              hookspath=[],
              runtime_hooks=[],
@@ -26,7 +26,7 @@ exe = EXE(pyz,
           bootloader_ignore_signals=False,
           strip=False,
           upx=True,
-          console=True , icon='C:\\Users\\johndev4\\Documents\\Python_files\\AI_Abby\\resources\\favicon.ico')
+          console=True , icon='C:\\Users\\johndev4\\Documents\\AI_Abby\\resources\\favicon.ico')
 coll = COLLECT(exe,
                a.binaries,
                a.zipfiles,

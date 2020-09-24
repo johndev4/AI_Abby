@@ -1,8 +1,7 @@
-from attributes import ME, AI_ASSISTANT
+from attributes import ME, AI_ASSISTANT, music_list
 from voice_system import VoiceSystem
 import webbrowser
 import random
-import json
 
 voice_Sys = VoiceSystem(AI_ASSISTANT, ME)
 
@@ -40,10 +39,8 @@ def give_command(query):
 
 
     elif "play" in query.lower() or "music" in query.lower() or "music on youtube" in query.lower() or "song" in query.lower():
-        with open("json/music_list.json") as music_list:
-            ml = json.load(music_list)
-        random.shuffle(ml['music_list'])
-        pick = random.choice(ml['music_list'])
+        random.shuffle(music_list)
+        pick = random.choice(music_list)
 
         voice_Sys.speak(f"Ok, playing some music..")
         url = f"www.youtube.com/watch?v={pick}"
