@@ -20,10 +20,10 @@ if __name__ == "__main__":
     system('cls')
     print(f"{attr.HEAD}\r\n\r\n")
     
-    '''voice_Sys.speak(f"Hello, I'm {attr.AI_ASSISTANT}, your virtual assistant.")
+    voice_Sys.speak(f"Hello, I'm {attr.AI_ASSISTANT}, your virtual assistant.")
     attr.ME = get_username(attr)
     voice_Sys.greet(attr.ME)
-    voice_Sys.speak(f"What can I help you today?")'''
+    voice_Sys.speak(f"What can I help you today?")
 
     while True:
         query = voice_Sys.listen()
