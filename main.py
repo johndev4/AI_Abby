@@ -7,13 +7,16 @@ from attributes import AI_ASSISTANT, CREATOR, ME, HEAD
 from voice_system import VoiceSystem
 import operations
 from get_started import get_username
+import ctypes
+
+ctypes.windll.kernel32.SetConsoleTitleW("AI Abby Virtual Assistant")
 
 if __name__ == "__main__":
     print(f"{HEAD}\r\n\r\n")
     print("Initializing the program...\r\n")
     
     voice_Sys = VoiceSystem(AI_ASSISTANT, ME)
-
+    
     voice_Sys.speak(f"Hello, I'm {AI_ASSISTANT}, your virtual assistant.")
     ME = get_username(ME)
     voice_Sys.greet(ME)

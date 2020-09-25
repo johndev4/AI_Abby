@@ -26,7 +26,7 @@ exe = EXE(pyz,
           bootloader_ignore_signals=False,
           strip=False,
           upx=True,
-          console=True , icon='C:\\Users\\johndev4\\Documents\\AI_Abby\\resources\\favicon.ico')
+          console=True)
 coll = COLLECT(exe,
                a.binaries,
                a.zipfiles,
