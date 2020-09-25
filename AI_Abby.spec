@@ -3,8 +3,8 @@
 block_cipher = None
 
 
-a = Analysis(['C:/Users/johndev4/Documents/AI_Abby/main.py'],
-             pathex=['C:\\Users\\johndev4\\Documents\\AI_Abby'],
+a = Analysis(['C:/Users/raphm/Documents/AI_Abby/main.py'],
+             pathex=['C:\\Users\\raphm\\Documents\\AI_Abby'],
              binaries=[],
              datas=[],
              hiddenimports=['pyttsx3.drivers', 'pyttsx3.drivers.dummy', 'pyttsx3.drivers.espeak', 'pyttsx3.drivers.nsss', 'pyttsx3.drivers.sapi5'],
