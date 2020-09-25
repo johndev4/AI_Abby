@@ -1,15 +1,13 @@
 import random
 from voice_system import VoiceSystem
-from attributes import CREATOR, AI_ASSISTANT, ME
 
-voiceSys = VoiceSystem(AI_ASSISTANT, ME)
-
-def get_username(ME):
+def get_username(attr):
     yes = 0
     no = 0
+    voiceSys = VoiceSystem(attr.AI_ASSISTANT, attr.ME)
     voiceSys.speak("May I know your name?")
 
-    while ME == "":
+    while attr.ME == "":
         query = voiceSys.listen()
 
         if "yes" == query.lower() or "yeah" == query.lower():
@@ -43,25 +41,25 @@ def get_username(ME):
 
         else:
             if "i'm " in query.lower() or "i am " in query.lower() or "my name is " in query.lower() or "hi " in query.lower() or "hello " in query.lower() or "yes " in query.lower() or "it's " in query.lower() or "it is " in query.lower():
-                ME = __process_name__(ME, query)
+                attr.ME = __process_name__(query)
 
             else:
                 if query == "":
-                    voiceSys.speak("I want to know your name first.")
+                    voiceSys.speak("I should know who I am talking to. So please tell me your name first.")
                 else:
                     temp_name = query.lower()
-                    voiceSys.speak("Is that your name?")
+                    voiceSys.speak(f"{temp_name.title()}, Is that your name?")
 
                     while True:
                         query = voiceSys.listen()
                         
                         if "yes" in query.lower() or "yea" in query.lower() or "yup" in query.lower() or "yep" in query.lower():
-                            ME = temp_name
+                            attr.ME = temp_name
                             break
                         elif "no" in query.lower() or "nope" in query.lower():
                             query = query.replace("no ", "")
                             if "i'm " in query.lower() or "i am " in query.lower() or "my name is " in query.lower() or "hi " in query.lower() or "hello " in query.lower() or "yes " in query.lower() or "it's " in query.lower() or "it is " in query.lower():
-                                ME = __process_name__(ME, query)
+                                attr.ME = __process_name__(query)
                             else:
                                 voiceSys.speak("So, what is your name?")
                             break
@@ -71,9 +69,9 @@ def get_username(ME):
                         else:
                             break
     
-    return ME.title()
+    return attr.ME.title()
 
-def __process_name__(ME, query):
+def __process_name__(query):
     ME = __process_encapsulation__(query, "i'm")
     ME = __process_encapsulation__(ME, "i am")
     ME = __process_encapsulation__(ME, "my name is")

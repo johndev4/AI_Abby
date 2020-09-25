@@ -8,22 +8,23 @@ print("Initializing the program...")
 from os import system
 system('title AI Abby Virtual Assistant')
 
-from attributes import AI_ASSISTANT, CREATOR, ME, HEAD
+from attributes import Attributes
 from voice_system import VoiceSystem
 from get_started import get_username
 import operations
 
 if __name__ == "__main__":
+    attr = Attributes()
+    voice_Sys = VoiceSystem(attr.AI_ASSISTANT, attr.ME)
+
     system('cls')
-    print(f"{HEAD}\r\n\r\n")
+    print(f"{attr.HEAD}\r\n\r\n")
     
-    voice_Sys = VoiceSystem(AI_ASSISTANT, ME)
-    
-    voice_Sys.speak(f"Hello, I'm {AI_ASSISTANT}, your virtual assistant.")
-    ME = get_username(ME)
-    voice_Sys.greet(ME)
-    voice_Sys.speak(f"What can I help you today?")
+    '''voice_Sys.speak(f"Hello, I'm {attr.AI_ASSISTANT}, your virtual assistant.")
+    attr.ME = get_username(attr)
+    voice_Sys.greet(attr.ME)
+    voice_Sys.speak(f"What can I help you today?")'''
 
     while True:
         query = voice_Sys.listen()
-        operations.func(query)
+        operations.func(attr, query)
