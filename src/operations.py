@@ -3,7 +3,6 @@ import termination
 import web_search
 import commands
 import conversation
-import json
 import wikipedia
 
 def func(attr, query):

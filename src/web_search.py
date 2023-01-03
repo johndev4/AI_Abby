@@ -1,6 +1,5 @@
 import wikipedia
 from voice_system import VoiceSystem
-import random
 
 def explore(attr, query):
     voice_Sys = VoiceSystem(attr.AI_ASSISTANT, attr.ME)

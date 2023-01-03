@@ -1,7 +1,7 @@
 class Attributes:
     
     def __init__(self):
-        self.CREATOR = "John Mistica"
+        self.CREATOR = "JohnDev4"
         self.AI_ASSISTANT = "Abby"
         self.ME = ""
 

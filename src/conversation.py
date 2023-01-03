@@ -1,5 +1,4 @@
 from voice_system import VoiceSystem
-import wikipedia
 import random
 import get_started
 
